@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Card, CardBody, CardTitle } from "reactstrap";
-import styled from 'styled-components';
+import styled from "styled-components";
 
 import SearchForm from "./SearchForm";
 
 export default function CharacterList() {
   const Wrapper = styled.div`
-  display:flex;
-  text-align: center;`;
+    display: flex;
+    text-align: center;
+  `;
 
   // TODO: Add useState to track data from useEffect
   // const [characters, setCharacter] = useState([]);
@@ -39,16 +40,17 @@ export default function CharacterList() {
     <section className="character-list">
       <SearchForm handleChange={handleChange} value={query} />
       {data.map(character => (
-        <Wrapper key={character.id}><Card >
-          <CardBody>
-            <CardTitle>
-              <p>{character.name}</p>
-            </CardTitle>
-          </CardBody>
-          <CardBody>
-            <img src={character.image} alt="rick and morty" />
-          </CardBody>
-        </Card>
+        <Wrapper key={character.id}>
+          <Card>
+            <CardBody>
+              <CardTitle>
+                <p>{character.name}</p>
+              </CardTitle>
+            </CardBody>
+            <CardBody>
+              <img src={character.image} alt="rick and morty" />
+            </CardBody>
+          </Card>
         </Wrapper>
       ))}
     </section>

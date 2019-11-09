@@ -1,7 +1,6 @@
 import React from "react";
 
-export default function SearchForm({value, handleChange}) {
-
+export default function SearchForm({ value, handleChange }) {
   return (
     <section className="search-form">
       <form>
@@ -14,7 +13,6 @@ export default function SearchForm({value, handleChange}) {
           onChange={handleChange}
         />
       </form>
-      
     </section>
   );
 }
